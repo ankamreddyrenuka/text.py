@@ -1,9 +1,12 @@
+
 import streamlit as st
 import pytesseract
 from PIL import Image
 import pyttsx3
 import tempfile
 import base64
+pytesseract.pytesseract.tesseract_cmd = r"your_tesseract_path/tesseract"
+
 
 # Simplification function (you can enhance this with more complex rules)
 def simplify_text(text):
@@ -39,7 +42,8 @@ def text_to_speech(text):
             
     return base64_audio
 
-# Function to extract text from image using OCR
+# Function to extract text from image using OCRsudo apt-get update
+
 def extract_text_from_image(image):
     text = pytesseract.image_to_string(image)
     return text
@@ -84,5 +88,4 @@ def main():
 
 if __name__== "__main__":
     main()
-
 
